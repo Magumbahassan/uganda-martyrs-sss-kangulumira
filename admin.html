@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Profiles</title>
+
+    <link rel="stylesheet" href="style.css">
+
+   <main>
+<header>
+
+  <nav class="lol">
+    <div class="logo">
+        <a href="#">UGANDA MARYRTRS CENTINARY SSS   KANGULUMIRA</a>
+    </div>
+    <ul class="nav-links">
+      
+
+
+      <div class="search-container">
+        <input type="text" placeholder="Search.." id="search-input">
+        <button type="button" onclick="searchFunction()"><i class="fas fa-search"></i></button>
+    </div>
+
+
+
+</nav>
+
+
+  <nav>
+    <div class="logo">
+    
+    <img src="  pic/J.png" alt="">
+    <a href="#">MOTTO   "ENDURE UNTIL SUCCESS</a>
+
+    
+    </div>
+
+
+      <nav class="navbar">
+        <a href="#" class="toggle-button" onclick="toggleNav()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <div class="navbar-links" id="navbar-links">
+            <ul>
+                <li><a href="index.html" onclick="navigateToSection('home')">HOME</a></li>
+                <li><a href="#about" onclick="navigateToSection('about')">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">ABOUT US</a>
+                    <div class="dropdown-content">
+                        <a href="admin.html" onclick="navigateToSection('admissions')">Administration</a>
+                        <a href="#online" onclick="navigateToSection('online')">Online</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">ACADEMICS</a>
+                    <div class="dropdown-content">
+                        <a href="cademic.html">Academics</a>
+                        <a href="staff.html" onclick="navigateToSection('staff')">Staff</a>
+                        <a href="UNEB.HTML" onclick="navigateToSection('uneb')">UNEB</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0275d8;
+            color: #fff;
+            border-radius: 10px 10px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .profiles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            flex: 1 1 250px;
+            max-width: 250px;
+        }
+        .profile-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #0275d8;
+        }
+        .profile-card h2 {
+            margin: 15px 0 10px;
+            font-size: 1.5em;
+            color: #0275d8;
+        }
+        .profile-card p {
+            margin: 0 0 20px;
+            color: #666;
+            font-size: 1em;
+        }
+        @media (max-width: 768px) {
+            .profiles {
+                flex-direction: column;
+                align-items: center;
+            }
+            .profile-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+
+   
+
+
+    <div class="container">
+        <div class="header">
+            <h1>BOARD OF GOVERNORS</h1>
+        </div>
+        <div class="profiles">
+            <div class="profile-card">
+                <img src="pics/admin1.jpg" alt="Administrator 1">
+                <h2>MISS MAGRET SSEMPALA MUMBEJJA</h2>
+                <p>CHAIRPERSON BOARD OF GOVERNOR </p>
+            </div>
+            <div class="profile-card">
+                <img src="pics/admin2.jpg" alt="Administrator 2">
+                <h2>REV  KANON IGNEOUS </h2>
+                <p>ARCHODELON</p>
+            </div>
+            <div class="profile-card">
+                <img src="pics/D" alt="Administrator 3">
+                <h2>MR BATTA GEORGE WILLIAM </h2>
+                <p> CHAIRMAN PTA</p>
+            </div>
+           
+            <!-- Add more profile cards as needed -->
+            <div class="profile-card">
+                <img src="pics/headteacher.jpg" alt="Administrator 2">
+                <h2>MR KALULE FRED</h2>
+                <p>HEAD TEACHER</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+<footer>
+  <div class="footer-container">
+      <div class="footer-section about">
+          <h2>About Us</h2>
+          <p>Welcome to [School Name], where we nurture and educate the next generation with passion and care.</p>
+      </div>
+      <div class="footer-section links">
+          <h2>Quick Links</h2>
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Admissions</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+      </div>
+      <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <ul>
+              <li>Email: contact@schoolname.com</li>
+              <li>Phone: (123) 456-7890</li>
+              <li>Address: 123 School Street, Education City, ED 12345</li>
+          </ul>
+          <div class="socials">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 [Uganda Martyrs Centinary sss kangulumia] <br>| Designed by  hassan magumba </p>
+      <button id="back-to-top">Back to Top</button>
+  </div>
+</footer>
+
+<section id="about">
+    <h1>About</h1>
+    <p>This is the about section.</p>
+</section>
+
+
+</main>
+
+
+
+</html>

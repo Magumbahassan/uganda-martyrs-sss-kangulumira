@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Staff</title>
+    <link rel="stylesheet" href="style.css">
+    <header>
+
+        <nav class="lol">
+          <div class="logo">
+              <a href="#">UGANDA MARYRTRS CENTINARY SSS   KANGULUMIRA</a>
+          </div>
+          <ul class="nav-links">
+            
+      
+      
+            <div class="search-container">
+              <input type="text" placeholder="Search.." id="search-input">
+              <button type="button" onclick="searchFunction()"><i class="fas fa-search"></i></button>
+          </div>
+      
+      
+      
+      </nav>
+      
+      
+        <nav>
+          <div class="logo">
+          
+          <img src="pics/J.png" alt="">
+          <a href="#">MOTTO   "ENDURE UNTIL SUCCESS</a>
+      
+          
+          </div>
+      
+      <header></header>
+            <nav class="navbar">
+              <a href="#" class="toggle-button" onclick="toggleNav()">
+                  <i class="fas fa-bars"></i>
+              </a>S
+              <div class="navbar-links" id="navbar-links">
+                  <ul>
+                      <li><a href="index.html" onclick="navigateToSection('home')">HOME</a></li>
+                      <li><a href="#about" onclick="navigateToSection('about')">About</a></li>
+                      <li class="dropdown">
+                          <a href="#" class="dropbtn">ABOUT US</a>
+                          <div class="dropdown-content">
+                              <a href="admin.html" onclick="navigateToSection('admissions')">Administration</a>
+                              <a href="#online" onclick="navigateToSection('online')">Online</a>
+                          </div>
+                      </li>
+                      <li class="dropdown">
+                          <a href="#" class="dropbtn">ACADEMICS</a>
+                          <div class="dropdown-content">
+                              <a href="cademic.html">Academics</a>
+                              <a href="staff.html" onclick="navigateToSection('staff')">Staff</a>
+                              <a href="UNEB.HTML" onclick="navigateToSection('uneb')">UNEB</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      
+      </header>
+      
+    <style>
+    
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card .image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+        }
+
+        .modal {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .modal img {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .modal h2 {
+            font-size: 2em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .close-btn {
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+<H1> BOARD OF OF GOVERNORS</H1>
+
+
+    <div class="container">
+        <h1>School Staff</h1>
+
+        <div class="grid">
+            <!-- Staff member cards -->
+            <div class="card" onclick="openModal(0)">
+                <img class="image" src="pics/head teacher.jpg" alt="Staff 1 Photo">
+                <div class="card-content">
+                    <h2>KALULE FRED</h2>
+                    <p>HEAD TEACHER</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(1)">
+                <img class="image" src="pics/DEPUTY  HEADTEACHER.jpg" alt="Staff 2 Photo">
+                <div class="card-content">
+                    <h2>NASSOLO RUTH</h2>
+                    <p>DEPUTY HEAD TEACHER</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(3)">
+                <img class="image" src="pics/TUMUKUNDE FILLY.jpg" alt="Staff 4 Photo">
+                <div class="card-content">
+                    <h2>TUMUKUDE FILLY</h2>
+                    <p>D.O.S</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="card" onclick="openModal(2)">
+                <img class="image" src="pics/GEOFREY.jpg" alt="Staff 3 Photo">
+                <div class="card-content">
+                    <h2>MR GEOFREY</h2>
+                    <p>BIOLOGY & CHEMISTRY</p>
+                </div>
+            </div>
+
+            
+
+            <div class="card" onclick="openModal(4)">
+                <img class="image" src="pics/MWASE.jpg" alt="Staff 5 Photo">
+                <div class="card-content">
+                    <h2>MMR MWASE JOSHUA</h2>
+                    <p>BIOLOGY&CHEM</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(5)">
+                <img class="image" src="pics/FAISAL.jpg" alt="Staff 6 Photo">
+                <div class="card-content">
+                    <h2>MUTEBI FAISAL</h2>
+                    <p>HISTROY AND LUGANDA</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(6)">
+                <img class="image" src="pics/BRUNO.jpg" alt="Staff 7 Photo">
+                <div class="card-content">
+                    <h2>ZAVUGA BRUNO</h2>
+                    <p>English Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(7)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+8" alt="Staff 8 Photo">
+                <div class="card-content">
+                    <h2>Emma Rodriguez</h2>
+                    <p>History Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(8)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+9" alt="Staff 9 Photo">
+                <div class="card-content">
+                    <h2>Daniel Martinez</h2>
+                    <p>Physical Education Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(9)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+10" alt="Staff 10 Photo">
+                <div class="card-content">
+                    <h2>Isabella Hernandez</h2>
+                    <p>Art Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(10)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+11" alt="Staff 11 Photo">
+                <div class="card-content">
+                    <h2>Alexander Lopez</h2>
+                    <p>Music Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(11)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+12" alt="Staff 12 Photo">
+                <div class="card-content">
+                    <h2>Mia Gonzalez</h2>
+                    <p>Language Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(12)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+13" alt="Staff 13 Photo">
+                <div class="card-content">
+                    <h2>Lucas Perez</h2>
+                    <p>Counselor</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(13)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+14" alt="Staff 14 Photo">
+                <div class="card-content">
+                    <h2>Madison Moore</h2>
+                    <p>Special Education Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(14)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+15" alt="Staff 15 Photo">
+                <div class="card-content">
+                    <h2>Joshua Taylor</h2>
+                    <p>Technology Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(15)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+16" alt="Staff 16 Photo">
+                <div class="card-content">
+                    <h2>Samantha Thomas</h2>
+                    <p>Health Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(16)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+17" alt="Staff 17 Photo">
+                <div class="card-content">
+                    <h2>Nathan Scott</h2>
+                    <p>Business Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(17)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+18" alt="Staff 18 Photo">
+                <div class="card-content">
+                    <h2>Anna Clark</h2>
+                    <p>Psychology Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(18)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+19" alt="Staff 19 Photo">
+                <div class="card-content">
+                    <h2>Christopher King</h2>
+                    <p>Physics Teacher</p>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal(19)">
+                <img class="image" src="https://via.placeholder.com/300?text=Staff+20" alt="Staff 20 Photo">
+                <div class="card-content">
+                    <h2>Elizabeth White</h2>
+                    <p>Chemistry Teacher</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="staff-modal" class="overlay">
+            <div class="modal">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <img id="modal-image" class="image" src="" alt="Staff Photo">
+                <h2 id="modal-name"></h2>
+                <p id="modal-position"></p>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Open modal function
+        function openModal(index) {
+            const staffMembers = [
+                { name: "John Doe", position: "Principal", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque mauris justo, vel varius orci condimentum ac.", imageSrc: "https://via.placeholder.com/300?text=Staff+1" },
+                { name: "Jane Smith", position: "Vice Principal", description: "Integer ut orci sed turpis eleifend varius. Vestibulum elementum eros non ante feugiat, ut lobortis leo gravida.", imageSrc: "https://via.placeholder.com/300?text=Staff+2" },
+                { name: "Michael Johnson", position: "Librarian", description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", imageSrc: "https://via.placeholder.com/300?text=Staff+3" },
+                { name: "Emily Brown", position: "Administrative Assistant", description: "Etiam nec ex vitae nunc suscipit finibus. Sed in consequat arcu, a pretium tortor.", imageSrc: "https://via.placeholder.com/300?text=Staff+4" },
+                { name: "William Wilson", position: "Mathematics Teacher", description: "Vivamus ac feugiat magna. Fusce ultricies varius neque, vitae consequat sapien.", imageSrc: "https://via.placeholder.com/300?text=Staff+5" },
+                { name: "Sophia Garcia", position: "Science Teacher", description: "Fusce eget nibh eget ex congue faucibus sit amet eget nisl. Curabitur euismod ex a posuere ultricies.", imageSrc: "https://via.placeholder.com/300?text=Staff+6" },
+                { name: "Oliver Davis", position: "English Teacher", description: "In quis nulla sed leo malesuada vehicula. Fusce sed eros id velit lobortis rhoncus.", imageSrc: "https://via.placeholder.com/300?text=Staff+7" },
+                { name: "Emma Rodriguez", position: "History Teacher", description: "Proin lacinia, est ac feugiat consectetur, libero lectus varius metus, at ultricies tortor erat ut purus.", imageSrc: "https://via.placeholder.com/300?text=Staff+8" },
+                { name: "Daniel Martinez", position: "Physical Education Teacher", description: "Nulla nec quam a leo sollicitudin interdum. Mauris vestibulum leo ac ligula lacinia, vitae lacinia nunc pharetra.", imageSrc: "https://via.placeholder.com/300?text=Staff+9" },
+                { name: "Isabella Hernandez", position: "Art Teacher", description: "Nam eu eros sit amet felis mollis tincidunt. Cras eleifend, quam et sollicitudin varius, turpis risus tempus libero.", imageSrc: "https://via.placeholder.com/300?text=Staff+10" },
+                { name: "Alexander Lopez", position: "Music Teacher", description: "Sed a turpis nec justo sodales efficitur. Quisque a mollis tortor, eu volutpat ligula.", imageSrc: "https://via.placeholder.com/300?text=Staff+11" },
+                { name: "Mia Gonzalez", position: "Language Teacher", description: "Maecenas sed leo quis libero dictum suscipit. Nulla facilisi. Aliquam erat volutpat.", imageSrc: "https://via.placeholder.com/300?text=Staff+12" },
+                { name: "Lucas Perez", position: "Counselor", description: "Morbi vehicula dignissim odio, ut laoreet lectus varius ac. Mauris sit amet tortor sapien.", imageSrc: "https://via.placeholder.com/300?text=Staff+13" },
+                { name: "Madison Moore", position: "Special Education Teacher", description: "Aenean ac sem sed risus venenatis vehicula. Mauris dignissim, arcu ut eleifend lacinia.", imageSrc: "https://via.placeholder.com/300?text=Staff+14" },
+                { name: "Joshua Taylor", position: "Technology Teacher", description: "Suspendisse potenti. Integer aliquet tortor ut libero eleifend, ac maximus mi congue.", imageSrc: "https://via.placeholder.com/300?text=Staff+15" },
+                { name: "Samantha Thomas", position: "Health Teacher", description: "Praesent id libero nec dui rhoncus aliquam. Duis ut lorem ut turpis suscipit vestibulum.", imageSrc: "https://via.placeholder.com/300?text=Staff+16" },
+                { name: "Nathan Scott", position: "Business Teacher", description: "Vivamus rutrum metus nisi, eget ultrices eros vestibulum nec. Nam ac diam et ante.", imageSrc: "https://via.placeholder.com/300?text=Staff+17" },
+                { name: "Anna Clark", position: "Psychology Teacher", description: "Proin tincidunt ante non ipsum tincidunt, nec congue leo efficitur. Nulla facilisi.", imageSrc: "https://via.placeholder.com/300?text=Staff+18" },
+                { name: "Christopher King", position: "Physics Teacher", description: "Fusce eget orci sagittis, accumsan nisl ut, auctor nisl. Sed gravida elit nec lacinia.", imageSrc: "https://via.placeholder.com/300?text=Staff+19" },
+                { name: "Elizabeth White", position: "Chemistry Teacher", description: "Nulla et magna a metus convallis mattis. Cras lacinia nisi eget dolor vehicula, id fringilla urna.", imageSrc: "https://via.placeholder.com/300?text=Staff+20" }
+            ];
+
+            const modal = document.getElementById('staff-modal');
+            const modalImage = document.getElementById('modal-image');
+            const modalName = document.getElementById('modal-name');
+            const modalPosition = document.getElementById('modal-position');
+            const modalDescription = document.getElementById('modal-description');
+
+            modalImage.src = staffMembers[index].imageSrc;
+            modalName.textContent = staffMembers[index].name;
+            modalPosition.textContent = staffMembers[index].position;
+            modalDescription.textContent = staffMembers[index].description;
+
+            modal.classList.add('active');
+        }
+
+        // Close modal function
+        function closeModal() {
+            const modal = document.getElementById('staff-modal');
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+</html>

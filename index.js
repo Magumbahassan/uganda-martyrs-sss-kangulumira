@@ -1,11 +1,45 @@
 function toggleNav() {
-    var navbarLinks = document.getElementById("navbar-links");
-    if (navbarLinks.style.display === "flex") {
-        navbarLinks.style.display = "none";
+    var navbarLinks = document.getElementById('navbar-links');
+    if (navbarLinks.style.display === 'block') {
+        navbarLinks.style.display = 'none';
     } else {
-        navbarLinks.style.display = "flex";
+        navbarLinks.style.display = 'block';
     }
 }
+
+
+
+
+
+
+function toggleNav() {
+    var navbarLinks = document.getElementById("navbar-links");
+    navbarLinks.classList.toggle("active");
+}
+
+function changeColor(element) {
+    // Remove active class from all links
+    var links = document.querySelectorAll('.navbar-links a');
+    links.forEach(function(link) {
+        link.classList.remove('active');
+    });
+
+    // Add active class to the clicked link
+    element.classList.add('active');
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

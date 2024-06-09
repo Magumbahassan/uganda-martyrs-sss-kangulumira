@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Online Admission Form</title>
+    <header>
+
+        <nav class="lol">
+          <div class="logo">
+              <a href="#">UGANDA MARYRTRS CENTINARY SSS   KANGULUMIRA</a>
+          </div>
+          <ul class="nav-links">
+            
+      
+      
+            <div class="search-container">
+              <input type="text" placeholder="Search.." id="search-input">
+              <button type="button" onclick="searchFunction()"><i class="fas fa-search"></i></button>
+          </div>
+      
+      
+      
+      </nav>
+      
+      
+        <nav>
+          <div class="logo">
+          
+          <img src="J.png" alt="">
+          <a href="#">MOTTO   "ENDURE UNTIL SUCCESS</a>
+      
+          
+          </div>
+      
+      
+            <nav class="navbar">
+              <a href="#" class="toggle-button" onclick="toggleNav()">
+                  <i class="fas fa-bars"></i>
+              </a>
+              <div class="navbar-links" id="navbar-links">
+                  <ul>
+                      <li><a href="index.html" onclick="navigateToSection('home')">HOME</a></li>
+                      <li><a href="#about" onclick="navigateToSection('about')">About</a></li>
+                      <li class="dropdown">
+                          <a href="#" class="dropbtn">ABOUT US</a>
+                          <div class="dropdown-content">
+                              <a href="admin.html" onclick="navigateToSection('admissions')">Administration</a>
+                              <a href="OLINE.HTML" onclick="navigateToSection('online')">Online</a>
+                          </div>
+                      </li>
+                      <li class="dropdown">
+                          <a href="#" class="dropbtn">ACADEMICS</a>
+                          <div class="dropdown-content">
+                              <a href="cademic.html">Academics</a>
+                              <a href="staff.html" onclick="navigateToSection('staff')">Staff</a>
+                              <a href="UNEB.HTML" onclick="navigateToSection('uneb')">UNEB</a>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+      
+      </header>
+      
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, select, button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e0ffe0;
+            border: 1px solid #b0ffb0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Online Admission Form</h2>
+        <form id="admissionForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="Religion">Religion:</label>
+            <input type="Religion" id="Religion" name="Religion" required>
+
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="tel">Tel::</label>
+            <input type="Tel" id="tel" name="Tel" required>
+
+
+            <label for="fschool">Former school:</label>
+            <input type="fschool" id="fschool" name="fschool" required>
+
+            <label for="maritual status">Maritual status:</label>
+            <select id="mstatus" name="mstatus" required>
+                <option value="mstatus">MARRIED</option>
+
+                    <option value="mstatus">SINGLE</option>
+                    <option value="mstatus">WIDOW</option>
+                    <option value="mstatus">SEPARATE</option>
+                    <option value="mstatus"></option>
+</select>
+
+
+
+
+
+
+
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="course">Course Applied for:</label>
+            <select id="course" name="course" required>
+                <option value="computer_science">Computer Science</option>
+                <option value="business_management">Business Management</option>
+                <option value="electrical_engineering">Electrical Engineering</option>
+                <option value="mechanical_engineering">Mechanical Engineering</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('admissionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const dob = document.getElementById('dob').value;
+            const course = document.getElementById('course').value;
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `
+                <h3>Form Submitted Successfully!</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+                <p><strong>Course:</strong> ${course}</p>
+            `;
+        });
+    </script>
+</body>
+</html>
