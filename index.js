@@ -1,4 +1,15 @@
 function toggleNav() {
+    var navbarLinks = document.getElementById("navbar-links");
+    if (navbarLinks.style.display === "flex") {
+        navbarLinks.style.display = "none";
+    } else {
+        navbarLinks.style.display = "flex";
+    }
+}
+
+
+
+function toggleNav() {
     var navbarLinks = document.getElementById('navbar-links');
     if (navbarLinks.style.display === 'block') {
         navbarLinks.style.display = 'none';
@@ -6,8 +17,6 @@ function toggleNav() {
         navbarLinks.style.display = 'block';
     }
 }
-
-
 
 
 
